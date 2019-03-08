@@ -30,7 +30,8 @@ async def commands(ctx):
     embed.add_field(name="Memes", value="Coming soon", inline=False)
     embed.add_field(name="Fun", value="cookie", inline=False)
     embed.add_field(name="Moderation", value="kick, ban, mute", inline=False)
-    embed.add_field(name="Misc", value="add, multiply, sub, div", inline=False)
+    embed.add_field(name="Calculation", value="add, multiply, sub, div", inline=False)
+    embed.add_field(name="Misc", value="Coming soon", inline=False)
     embed.set_footer(text='© NightInk')
     await bot.say(embed=embed)
 
@@ -45,7 +46,7 @@ async def userinfo(ctx,member: discord.Member=None):
         em.add_field(name='Top Role', value='{0.top_role}'.format(member))
         em.add_field(name='Roles', value=', '.join(g.name for g in member.roles))
         em.add_field(name='Joined', value='{0.joined_at}'.format(member))
-        em.add_field(name='Joined', value='{0.created_at}'.format(member))
+        em.add_field(name='Registered', value='{0.created_at}'.format(member))
         em.set_thumbnail(url=member.avatar_url)
         await bot.say(embed=em)
 
