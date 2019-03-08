@@ -4,7 +4,7 @@ from discord import Game
 import os
 
 bot = commands.Bot(command_prefix=';MN-')
-bot.load_extension('pp')
+bot.load_extension('ModCommands')
 bot.remove_command('help')
 @bot.event
 async def on_ready():
