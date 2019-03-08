@@ -3,6 +3,7 @@
 from discord.ext import commands
 import discord
 from discord import Game
+import os
 
 bot = commands.Bot(command_prefix=';MN-')
 bot.load_extension('pp')
