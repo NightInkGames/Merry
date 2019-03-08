@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
 from discord.ext import commands
 import discord
 from discord import Game
@@ -47,6 +45,7 @@ async def userinfo(ctx,member: discord.Member=None):
         em.add_field(name='Top Role', value='{0.top_role}'.format(member))
         em.add_field(name='Roles', value=', '.join(g.name for g in member.roles))
         em.add_field(name='Joined', value='{0.joined_at}'.format(member))
+        em.add_field(name='Joined', value='{0.created_at}'.format(member))
         em.set_thumbnail(url=member.avatar_url)
         await bot.say(embed=em)
 
