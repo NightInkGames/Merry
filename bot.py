@@ -1,6 +1,7 @@
 from discord.ext import commands
 import discord
 from discord import Game
+import os
 import time
 
 bot = commands.Bot(command_prefix=";MN-", ";mN-", ";mn-", ";Mn-")
@@ -87,22 +88,6 @@ async def say(ctx,*,message):
          await bot.say(message)
     else:
         await bot.say("Sorry, can't do that for ya. Bot Owner only.")
-		
-#Version 0.1.0
-
-@bot.listen()
-async def on_member_join(Member):
-	if ctx.sever.id == '397528685672005632'
-    role = discord.utils.get(Member.server.roles,  name="Unverified")
-	    await bot.add_roles(Member, role)
-     else:
-        return;
-	
-@bot.listen()  
-async def on_command_error(self, error: Exception):
-    if isinstance(error, commands.CommandNotFound):
-        await bot.say("What? It seems like that command doesn't exist!")
-
 
 
 bot.run(os.getenv("TOKEN"))
