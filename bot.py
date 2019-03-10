@@ -4,7 +4,7 @@ from discord import Game
 import os
 import time
 
-bot = commands.Bot(command_prefix=";MN-", ";mN-", ";mn-", ";Mn-")
+bot = commands.Bot(command_prefix=(";MN-", ";mN-", ";mn-", ";Mn-"))
 bot.load_extension('ModCommands')
 bot.remove_command('help')
 @bot.event
