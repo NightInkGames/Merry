@@ -1,9 +1,9 @@
 from discord.ext import commands
 import discord
 from discord import Game
-import os
+import time
 
-bot = commands.Bot(command_prefix=';MN-')
+bot = commands.Bot(command_prefix=";MN-", ";mN-", ";mn-", ";Mn-")
 bot.load_extension('ModCommands')
 bot.remove_command('help')
 @bot.event
@@ -11,13 +11,15 @@ async def on_ready():
     await bot.change_presence(game=Game(name="With my Prefix (;MN-)"))
     print("Logged in as " + bot.user.name)
 
+#Version 0.0.1
+
 @bot.command()
 async def cookie():
     await bot.say(':cookie:')
 
 @bot.command(pass_context=True)
 async def ping(ctx):
-    resp = await bot.say('Pong! Loading...')
+    resp = await bot.say('Pongaboo! Loading...')
     diff = resp.timestamp - ctx.message.timestamp
     await bot.edit_message(resp, 'Pongaboo! That took me {:.1f}ms.'.format(1000*diff.total_seconds()))
 
@@ -30,8 +32,9 @@ async def commands(ctx):
     embed.add_field(name="Memes", value="Coming soon", inline=False)
     embed.add_field(name="Fun", value="cookie", inline=False)
     embed.add_field(name="Moderation", value="kick, ban, mute", inline=False)
-    embed.add_field(name="Calculation", value="add, multiply, sub, div", inline=False)
+    embed.add_field(name="Calculator", value="add, multiply, sub, div", inline=False)
     embed.add_field(name="Misc", value="Coming soon", inline=False)
+	embed.add_field(name=" ", value="For more information on a certain command, type ;MN-help <command>", inline=False)
     embed.set_footer(text='© NightInk')
     await bot.say(embed=embed)
 
@@ -83,6 +86,23 @@ async def say(ctx,*,message):
     if ctx.message.author.id == '374996779781062656':
          await bot.say(message)
     else:
-        await bot.say("Sorry, can't do that for ya.")
+        await bot.say("Sorry, can't do that for ya. Bot Owner only.")
+		
+#Version 0.1.0
+
+@bot.listen()
+async def on_member_join(Member):
+	if ctx.sever.id == '397528685672005632'
+    role = discord.utils.get(Member.server.roles,  name="Unverified")
+	    await bot.add_roles(Member, role)
+     else:
+        return;
+	
+@bot.listen()  
+async def on_command_error(self, error: Exception):
+    if isinstance(error, commands.CommandNotFound):
+        await bot.say("What? It seems like that command doesn't exist!")
+
+
 
 bot.run(os.getenv("TOKEN"))
