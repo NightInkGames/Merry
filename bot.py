@@ -35,7 +35,6 @@ async def commands(ctx):
     embed.add_field(name="Moderation", value="kick, ban, mute", inline=False)
     embed.add_field(name="Calculator", value="add, multiply, sub, div", inline=False)
     embed.add_field(name="Misc", value="Coming soon", inline=False)
-	embed.add_field(name=" ", value="For more information on a certain command, type ;MN-help <command>", inline=False)
     embed.set_footer(text='© NightInk')
     await bot.say(embed=embed)
 
