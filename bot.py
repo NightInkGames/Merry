@@ -87,6 +87,16 @@ async def say(ctx,*,message):
          await bot.say(message)
     else:
         await bot.say("Sorry, can't do that for ya. Bot Owner only.")
+        
+#Version 0.1.0
+        
+@bot.event
+async def on_member_join(Member):
+    if Member.server.id == '397528685672005632':
+        role = discord.utils.get(Member.server.roles, name = "Unverified")
+        await bot.add_roles(Member,role)
+    else:
+        return;
 
 
 bot.run(os.getenv("TOKEN"))
