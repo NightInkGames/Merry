@@ -95,6 +95,9 @@ async def on_member_join(Member):
     if Member.server.id == '397528685672005632':
         role = discord.utils.get(Member.server.roles, name = "Unverified")
         await bot.add_roles(Member,role)
+    if Member.server.id == '387554461805182977':
+        role = discord.utils.get(Member.server.roles, name = "Unverified")
+        await bot.add_roles(Member,role)
     else:
         return;
 
