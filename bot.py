@@ -107,6 +107,7 @@ async def giverole(ctx, Member):
         usr = ctx.message.author
         role = discord.utils.get(usr.server.roles,  name=("Bot Notifys", "Video Notifys", "Game Notifys"))
         await bot.add_roles(Member,role)
+        await bot.say("Got ya!")
     else:
         return;
 
