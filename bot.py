@@ -100,6 +100,15 @@ async def on_member_join(Member):
         await bot.add_roles(Member,role)
     else:
         return;
+    
+@bot.command(pass_context = True)
+async def giverole(ctx, Member):
+    if member.server.id == '397528685672005632':
+        usr = ctx.message.author
+        role = discord.utils.get(usr.server.roles,  name=("Bot Notifys", "Video Notifys", "Game Notifys"))
+        await bot.add_roles(Member,role)
+    else:
+        return;
 
 
 bot.run(os.getenv("TOKEN"))
