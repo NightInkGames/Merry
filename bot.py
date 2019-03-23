@@ -102,11 +102,11 @@ async def on_member_join(Member):
         return;
     
 @bot.command(pass_context = True)
-async def giverole(ctx,usr):
-    if usr.server.id == '397528685672005632':
-        usr = ctx.message.author
-        role = discord.utils.get(usr.server.roles,  name=("Bot Notifys", "Video Notifys", "Game Notifys"))
-        await bot.add_roles(usr,role)
+async def giverole(ctx,peep):
+    if peep.server.id == '397528685672005632':
+        peep = ctx.message.author
+        role = discord.utils.get(peep.server.roles,  name=("Bot Notifys", "Video Notifys", "Game Notifys"))
+        await bot.add_roles(peep,role)
         await bot.say("Got ya.")
     else:
         return;
